@@ -1,0 +1,1221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CreatorOrbit - Premium website development and conversion-focused copywriting. Developer + Writer Studio.">
+    <title>CreatorOrbit - Websites That Actually Convert</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #0EA5E9;
+            --primary-dark: #0284C7;
+            --dark-bg: #0F172A;
+            --dark-card: #1E293B;
+            --text-dark: #0F172A;
+            --text-medium: #64748B;
+            --text-light: #94A3B8;
+            --bg-light: #F8FAFC;
+            --white: #FFFFFF;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            padding: 20px 0;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, var(--primary-blue), #06B6D4);
+            border-radius: 50%;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-medium);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-blue);
+        }
+
+        .btn-primary {
+            background: var(--primary-blue);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--primary-blue);
+            padding: 12px 28px;
+            border: 2px solid var(--primary-blue);
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-outline:hover {
+            background: var(--primary-blue);
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 140px 0 100px;
+            background: linear-gradient(to bottom, #F8FAFC, #EFF6FF);
+            text-align: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #DBEAFE;
+            color: var(--primary-blue);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 32px;
+        }
+
+        .badge::before {
+            content: "●";
+            font-size: 12px;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            color: var(--text-dark);
+        }
+
+        .hero h1 .highlight {
+            color: var(--primary-blue);
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: var(--text-medium);
+            max-width: 700px;
+            margin: 0 auto 40px;
+            line-height: 1.7;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 100px 0;
+        }
+
+        .section-label {
+            text-align: center;
+            color: var(--primary-blue);
+            font-weight: 700;
+            font-size: 14px;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .section-title .highlight {
+            color: var(--primary-blue);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 18px;
+            color: var(--text-medium);
+            max-width: 700px;
+            margin: 0 auto 60px;
+            line-height: 1.7;
+        }
+
+        /* Problem Section */
+        .problem-section {
+            background: var(--dark-bg);
+            color: white;
+        }
+
+        .problem-section .section-label {
+            color: var(--primary-blue);
+        }
+
+        .problem-section .section-title {
+            color: white;
+        }
+
+        .problem-section .section-subtitle {
+            color: var(--text-light);
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+            margin-top: 60px;
+        }
+
+        .problem-card {
+            background: var(--dark-card);
+            padding: 32px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .problem-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(14, 165, 233, 0.1);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: var(--primary-blue);
+            font-size: 24px;
+        }
+
+        .problem-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: white;
+        }
+
+        .problem-card p {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Approach Section */
+        .approach-section {
+            background: white;
+        }
+
+        .approach-visual {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 32px;
+            margin: 60px 0;
+            flex-wrap: wrap;
+        }
+
+        .approach-box {
+            background: #F8FAFC;
+            padding: 40px 32px;
+            border-radius: 16px;
+            text-align: center;
+            flex: 1;
+            min-width: 240px;
+            max-width: 280px;
+            border: 2px solid #E2E8F0;
+        }
+
+        .approach-icon {
+            width: 64px;
+            height: 64px;
+            background: #DBEAFE;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 28px;
+        }
+
+        .approach-box h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .approach-box p {
+            font-size: 14px;
+            color: var(--text-medium);
+            line-height: 1.5;
+        }
+
+        .approach-symbol {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--primary-blue);
+        }
+
+        .approach-result {
+            background: linear-gradient(135deg, var(--primary-blue), #06B6D4);
+            color: white;
+            padding: 40px 32px;
+            border-radius: 16px;
+            text-align: center;
+            flex: 1;
+            min-width: 280px;
+            max-width: 320px;
+        }
+
+        .approach-result .approach-icon {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .approach-result h3 {
+            color: white;
+        }
+
+        .approach-result p {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            margin-top: 60px;
+        }
+
+        .benefit-card {
+            text-align: center;
+        }
+
+        .benefit-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .benefit-card p {
+            color: var(--text-medium);
+            line-height: 1.6;
+        }
+
+        /* Process Section */
+        .process-section {
+            background: #F8FAFC;
+        }
+
+        .process-timeline {
+            max-width: 800px;
+            margin: 60px auto 0;
+            position: relative;
+        }
+
+        .process-step {
+            display: flex;
+            gap: 32px;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .process-step:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: 31px;
+            top: 64px;
+            width: 2px;
+            height: calc(100% + 20px);
+            background: linear-gradient(to bottom, var(--primary-blue), #DBEAFE);
+        }
+
+        .process-icon-wrapper {
+            flex-shrink: 0;
+        }
+
+        .process-day {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--primary-blue);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .process-icon {
+            width: 64px;
+            height: 64px;
+            background: var(--primary-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 28px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .process-content h3 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .process-content p {
+            color: var(--text-medium);
+            line-height: 1.7;
+        }
+
+        /* Packages Section */
+        .packages-section {
+            background: white;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+            margin-top: 60px;
+            max-width: 1100px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .pricing-card {
+            background: white;
+            border: 2px solid #E2E8F0;
+            border-radius: 16px;
+            padding: 40px 32px;
+            position: relative;
+            transition: all 0.3s;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .pricing-card.featured {
+            background: var(--dark-bg);
+            border-color: var(--primary-blue);
+            color: white;
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary-blue);
+            color: white;
+            padding: 6px 20px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .popular-badge::before {
+            content: "⭐";
+            font-size: 12px;
+        }
+
+        .pricing-header {
+            text-align: center;
+            padding-bottom: 24px;
+            border-bottom: 2px solid #E2E8F0;
+            margin-bottom: 32px;
+        }
+
+        .pricing-card.featured .pricing-header {
+            border-bottom-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .pricing-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .pricing-card.featured h3 {
+            color: white;
+        }
+
+        .price {
+            font-size: 48px;
+            font-weight: 800;
+            margin: 16px 0;
+        }
+
+        .price-subtitle {
+            font-size: 14px;
+            color: var(--text-medium);
+        }
+
+        .pricing-card.featured .price-subtitle {
+            color: var(--text-light);
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 32px;
+        }
+
+        .pricing-features li {
+            padding: 10px 0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--text-medium);
+        }
+
+        .pricing-card.featured .pricing-features li {
+            color: var(--text-light);
+        }
+
+        .pricing-features li::before {
+            content: "✓";
+            color: var(--primary-blue);
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .pricing-card .btn-primary,
+        .pricing-card .btn-outline {
+            width: 100%;
+            text-align: center;
+        }
+
+        .packages-cta {
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        /* About Section */
+        .about-section {
+            background: #F8FAFC;
+        }
+
+        .about-content {
+            max-width: 600px;
+            margin: 0 auto 60px;
+        }
+
+        .about-content p {
+            font-size: 18px;
+            color: var(--text-medium);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 32px;
+            margin-top: 60px;
+        }
+
+        .about-card {
+            background: white;
+            padding: 32px 24px;
+            border-radius: 12px;
+            text-align: center;
+            border: 2px solid #E2E8F0;
+        }
+
+        .about-icon {
+            font-size: 32px;
+            margin-bottom: 16px;
+        }
+
+        .about-card h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .about-card p {
+            font-size: 14px;
+            color: var(--text-medium);
+            line-height: 1.6;
+        }
+
+        /* Lead Magnet Section */
+        .lead-magnet-section {
+            background: var(--dark-bg);
+            color: white;
+        }
+
+        .lead-magnet-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .lead-magnet-content h2 {
+            font-size: 40px;
+            font-weight: 800;
+            margin-bottom: 16px;
+            color: white;
+        }
+
+        .lead-magnet-content p {
+            font-size: 16px;
+            color: var(--text-light);
+            margin-bottom: 32px;
+        }
+
+        .checklist-preview {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 32px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .checklist-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 24px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .checklist-icon {
+            font-size: 28px;
+        }
+
+        .checklist-title {
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .checklist-items {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        .checklist-item::before {
+            content: "✓";
+            color: var(--primary-blue);
+            font-weight: 700;
+        }
+
+        .checklist-item.more {
+            opacity: 0.5;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        input {
+            padding: 14px 16px;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            font-size: 16px;
+            background: rgba(255, 255, 255, 0.05);
+            color: white;
+        }
+
+        input::placeholder {
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        input:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+        }
+
+        .form-note {
+            font-size: 13px;
+            color: var(--text-light);
+            text-align: center;
+        }
+
+        /* Final CTA Section */
+        .final-cta-section {
+            background: white;
+            text-align: center;
+        }
+
+        .final-cta-section h2 {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .final-cta-section p {
+            font-size: 18px;
+            color: var(--text-medium);
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        .cta-note {
+            margin-top: 20px;
+            font-size: 14px;
+            color: var(--text-medium);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-bg);
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand h3 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .footer-tagline {
+            color: var(--text-light);
+        }
+
+        .footer-column h4 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .footer-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .footer-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-light);
+            margin-bottom: 12px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-light);
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .section-title {
+                font-size: 32px;
+            }
+
+            .approach-visual {
+                flex-direction: column;
+            }
+
+            .approach-symbol {
+                transform: rotate(90deg);
+            }
+
+            .lead-magnet-container {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .final-cta-section h2 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">
+                <div class="logo-icon"></div>
+                CreatorOrbit
+            </div>
+            <ul class="nav-links">
+                <li><a href="#approach">Approach</a></li>
+                <li><a href="#process">Process</a></li>
+                <li><a href="#packages">Packages</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#cta" class="btn-primary">Book a Call</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="badge">Developer + Writer Studio</div>
+            <h1>Websites That Actually <span class="highlight">Convert</span><br>Your Visitors Into Clients</h1>
+            <p>We combine strategic copywriting with clean, high-performance development to create websites that don't just look good — they drive action.</p>
+            <div class="hero-buttons">
+                <a href="#cta" class="btn-primary">Book a Free Strategy Call →</a>
+                <a href="#approach" class="btn-outline">View Our Approach</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem-section">
+        <div class="container">
+            <div class="section-label">THE PROBLEM</div>
+            <h2 class="section-title">Why Most Websites Fail to Generate Leads</h2>
+            <p class="section-subtitle">Your website should be your hardest-working salesperson. Instead, most sites actively lose you money.</p>
+            
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <div class="problem-icon">🚫</div>
+                    <h3>No clear messaging</h3>
+                    <p>Visitors land on your site and have no idea what you do or why they should care.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">🎯</div>
+                    <h3>No strategic positioning</h3>
+                    <p>Your website looks like everyone else's. Nothing differentiates you from competitors.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">📄</div>
+                    <h3>Generic, forgettable copy</h3>
+                    <p>Template text that could belong to any business. Zero personality, zero persuasion.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">⚠️</div>
+                    <h3>No conversion system</h3>
+                    <p>Beautiful pages with no clear path to action. Visitors browse, then leave forever.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">💻</div>
+                    <h3>Wrong expertise gap</h3>
+                    <p>Built by developers who don't understand marketing — or marketers who can't code.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">🔧</div>
+                    <h3>No conversion system</h3>
+                    <p>Beautiful pages with no clear path to action. Visitors browse, then leave forever.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Approach Section -->
+    <section class="approach-section" id="approach">
+        <div class="container">
+            <div class="section-label">OUR APPROACH</div>
+            <h2 class="section-title">Developer + Writer = <span class="highlight">Websites That Convert</span></h2>
+            <p class="section-subtitle">Most agencies are either great at design or great at copy — never both. We built CreatorOrbit to combine strategic copywriting, conversion design, and clean development into one seamless process.</p>
+            
+            <div class="approach-visual">
+                <div class="approach-box">
+                    <div class="approach-icon">&lt;/&gt;</div>
+                    <h3>Developer</h3>
+                    <p>Clean code. Fast sites. Pixel-perfect design.</p>
+                </div>
+                
+                <div class="approach-symbol">+</div>
+                
+                <div class="approach-box">
+                    <div class="approach-icon">✍️</div>
+                    <h3>Writer</h3>
+                    <p>Strategic copy. Clear messaging. Persuasive words.</p>
+                </div>
+                
+                <div class="approach-symbol">=</div>
+                
+                <div class="approach-result">
+                    <div class="approach-icon">🚀</div>
+                    <h3>Conversion Machine</h3>
+                    <p>Websites that look premium and sell effectively.</p>
+                </div>
+            </div>
+
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <h3>Every word intentional</h3>
+                    <p>No filler copy. Every sentence is engineered to move your visitor closer to action.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Every button positioned</h3>
+                    <p>CTAs are placed based on user behavior patterns, not designer preference.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Every pixel purposeful</h3>
+                    <p>Design decisions backed by conversion principles, not just aesthetics.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process-section" id="process">
+        <div class="container">
+            <div class="section-label">OUR PROCESS</div>
+            <h2 class="section-title">The 7-Day Website Launch System</h2>
+            <p class="section-subtitle">Our proven process to take you from idea to live website in one week.</p>
+            
+            <div class="process-timeline">
+                <div class="process-step">
+                    <div class="process-icon-wrapper">
+                        <div class="process-day">DAY 1</div>
+                        <div class="process-icon">💡</div>
+                    </div>
+                    <div class="process-content">
+                        <h3>Strategy Session</h3>
+                        <p>We deep-dive into your business, audience, and goals to build a conversion roadmap.</p>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="process-icon-wrapper">
+                        <div class="process-day">DAY 2-3</div>
+                        <div class="process-icon">📝</div>
+                    </div>
+                    <div class="process-content">
+                        <h3>Messaging & Copy</h3>
+                        <p>Strategic copywriting crafted to speak directly to your ideal clients and compel action.</p>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="process-icon-wrapper">
+                        <div class="process-day">DAY 3-5</div>
+                        <div class="process-icon">🎨</div>
+                    </div>
+                    <div class="process-content">
+                        <h3>Design & Development</h3>
+                        <p>Clean, modern development with conversion-focused layouts and lightning-fast performance.</p>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="process-icon-wrapper">
+                        <div class="process-day">DAY 5-6</div>
+                        <div class="process-icon">🔄</div>
+                    </div>
+                    <div class="process-content">
+                        <h3>Review & Refine</h3>
+                        <p>Collaborative feedback rounds to perfect every detail before launch.</p>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="process-icon-wrapper">
+                        <div class="process-day">DAY 7</div>
+                        <div class="process-icon">🚀</div>
+                    </div>
+                    <div class="process-content">
+                        <h3>Launch & Handoff</h3>
+                        <p>Go live with full documentation, training, and ongoing support.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Packages Section -->
+    <section class="packages-section" id="packages">
+        <div class="container">
+            <div class="section-label">PACKAGES</div>
+            <h2 class="section-title">Choose Your Launch Package</h2>
+            <p class="section-subtitle">Every package includes strategic copy, conversion design, and clean development.</p>
+            
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Starter</h3>
+                        <div class="price">₹5,000</div>
+                        <p class="price-subtitle">Perfect for solo coaches and consultants</p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>5-page website</li>
+                        <li>Conversion-focused copy</li>
+                        <li>Mobile responsive</li>
+                        <li>7-day delivery</li>
+                        <li>1 revision round</li>
+                    </ul>
+                    <a href="#cta" class="btn-outline">Get Started →</a>
+                </div>
+
+                <div class="pricing-card featured">
+                    <div class="popular-badge">Most Popular</div>
+                    <div class="pricing-header">
+                        <h3>Professional</h3>
+                        <div class="price">₹10,000</div>
+                        <p class="price-subtitle">Perfect for established coaches and agencies</p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>8-page website</li>
+                        <li>Advanced copywriting</li>
+                        <li>Custom design elements</li>
+                        <li>Email capture system</li>
+                        <li>7-day delivery</li>
+                        <li>2 revision rounds</li>
+                    </ul>
+                    <a href="#cta" class="btn-primary">Get Started →</a>
+                </div>
+
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Premium</h3>
+                        <div class="price">₹15,000</div>
+                        <p class="price-subtitle">Perfect for growing businesses and course creators</p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>12+ pages</li>
+                        <li>Full brand messaging strategy</li>
+                        <li>Custom illustrations/graphics</li>
+                        <li>Lead magnet integration</li>
+                        <li>Priority 5-day delivery</li>
+                        <li>3 revision rounds</li>
+                        <li>30-day post-launch support</li>
+                    </ul>
+                    <a href="#cta" class="btn-outline">Get Started →</a>
+                </div>
+            </div>
+
+            <div class="packages-cta">
+                <a href="#cta" class="btn-primary">Book Your Strategy Call →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="section-label">ABOUT US</div>
+            <h2 class="section-title">Built by Two Student Entrepreneurs Who Understand Modern Business</h2>
+            
+            <div class="about-content">
+                <p>We saw a gap that frustrated us: beautiful websites that don't convert a single lead, and high-converting websites that look like they were built in 2010.</p>
+                <p>So we built CreatorOrbit to combine both — premium design with strategic, conversion-focused copywriting. Every project gets the attention of both a developer and a writer working in sync.</p>
+                <p>As founding clients, you get something rare: the premium attention of a boutique studio at a fraction of what established agencies charge. We're building our reputation — and that means your project gets everything we've got.</p>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-card">
+                    <div class="about-icon">👥</div>
+                    <h3>Fresh Perspective</h3>
+                    <p>We think like the new generation of buyers — because we are.</p>
+                </div>
+                <div class="about-card">
+                    <div class="about-icon">⚡</div>
+                    <h3>Fast Turnaround</h3>
+                    <p>7 days from kickoff to launch. No months of waiting.</p>
+                </div>
+                <div class="about-card">
+                    <div class="about-icon">💬</div>
+                    <h3>Direct Communication</h3>
+                    <p>You talk to the people building your site. No middlemen.</p>
+                </div>
+                <div class="about-card">
+                    <div class="about-icon">🎯</div>
+                    <h3>Founding Client Advantage</h3>
+                    <p>Premium attention and unbeatable value as we build our portfolio.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lead Magnet Section -->
+    <section class="lead-magnet-section">
+        <div class="container">
+            <div class="lead-magnet-container">
+                <div class="checklist-preview">
+                    <div class="checklist-header">
+                        <span class="checklist-icon">📋</span>
+                        <span class="checklist-title">Website Launch Checklist</span>
+                    </div>
+                    <div class="checklist-items">
+                        <div class="checklist-item">Define core value proposition</div>
+                        <div class="checklist-item">Write conversion-focused headlines</div>
+                        <div class="checklist-item">Set up analytics tracking</div>
+                        <div class="checklist-item">Optimize page load speed</div>
+                        <div class="checklist-item">Test on all devices</div>
+                        <div class="checklist-item more">+ 42 more items...</div>
+                    </div>
+                </div>
+
+                <div class="lead-magnet-content">
+                    <div class="section-label">FREE RESOURCE</div>
+                    <h2>The Website Launch Checklist</h2>
+                    <p>47 things you can't forget when building a high-converting website.</p>
+                    
+                    <form>
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Email Address" required>
+                        <button type="submit" class="btn-primary">Send Me The Checklist</button>
+                        <p class="form-note">No spam. Unsubscribe anytime.</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="final-cta-section" id="cta">
+        <div class="container">
+            <h2>Ready to Build a Website That Actually <span class="highlight">Converts</span>?</h2>
+            <p>Let's talk about your business, your goals, and how we can help you launch in 7 days.</p>
+            <a href="mailto:creatororbit48@gmail.com" class="btn-primary">Book Your Free Strategy Call →</a>
+            <p class="cta-note">No pressure. No sales pitch. Just a conversation about what's possible.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>CreatorOrbit</h3>
+                    <p class="footer-tagline">Websites that convert.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#approach">Our Approach</a></li>
+                        <li><a href="#packages">Packages</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Get In Touch</h4>
+                    <div class="contact-item">✉️ creatororbit48@gmail.com</div>
+                    <div class="contact-item">📷 @creator_orbit</div>
+                    <div class="contact-item">🐦 @creator_orbit</div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2026 CreatorOrbit. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
