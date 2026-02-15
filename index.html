@@ -6,6 +6,7 @@
     <meta name="description" content="CreatorOrbit - Premium website development and conversion-focused copywriting. Developer + Writer Studio.">
     <title>CreatorOrbit - Websites That Actually Convert</title>
     
+    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-FNJ63YS8EN"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -13,6 +14,10 @@
       gtag('js', new Date());
       gtag('config', 'G-FNJ63YS8EN');
     </script>
+    
+    <!-- Calendly Widget -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
     
     <style>
         * {
@@ -31,6 +36,7 @@
             --text-light: #94A3B8;
             --bg-light: #F8FAFC;
             --white: #FFFFFF;
+            --whatsapp-green: #25D366;
         }
 
         html {
@@ -820,7 +826,38 @@
             font-size: 14px;
         }
 
-        /* Responsive */
+        /* WhatsApp Floating Button */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--whatsapp-green);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+            z-index: 999;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        .whatsapp-float svg {
+            width: 35px;
+            height: 35px;
+        }
+
+        /* Responsive Design */
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
@@ -854,6 +891,18 @@
             .final-cta-section h2 {
                 font-size: 32px;
             }
+
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .whatsapp-float svg {
+                width: 28px;
+                height: 28px;
+            }
         }
     </style>
 </head>
@@ -871,7 +920,7 @@
                 <li><a href="#packages">Packages</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li><a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/creatororbit48/30min'});return false;" class="btn-primary">Book a Free Strategy Call →</a></li>
+                <li><a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/creatororbit48/30min'});return false;" class="btn-primary">Book a Call</a></li>
             </ul>
         </div>
     </nav>
@@ -924,8 +973,8 @@
                 </div>
                 <div class="problem-card">
                     <div class="problem-icon">🔧</div>
-                    <h3>No conversion system</h3>
-                    <p>Beautiful pages with no clear path to action. Visitors browse, then leave forever.</p>
+                    <h3>Built by wrong people</h3>
+                    <p>Either developers who can't write, or writers who can't code. Never both skills together.</p>
                 </div>
             </div>
         </div>
@@ -1056,7 +1105,7 @@
                 <div class="pricing-card">
                     <div class="pricing-header">
                         <h3>Starter</h3>
-                        <div class="price">₹5,000</div>
+                        <div class="price">₹30,000</div>
                         <p class="price-subtitle">Perfect for solo coaches and consultants</p>
                     </div>
                     <ul class="pricing-features">
@@ -1066,14 +1115,14 @@
                         <li>7-day delivery</li>
                         <li>1 revision round</li>
                     </ul>
-                    <a href="#cta" class="btn-outline">Get Started →</a>
+                    <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/creatororbit48/30min'});return false;" class="btn-outline">Get Started →</a>
                 </div>
 
                 <div class="pricing-card featured">
                     <div class="popular-badge">Most Popular</div>
                     <div class="pricing-header">
                         <h3>Professional</h3>
-                        <div class="price">₹10,000</div>
+                        <div class="price">₹60,000</div>
                         <p class="price-subtitle">Perfect for established coaches and agencies</p>
                     </div>
                     <ul class="pricing-features">
@@ -1084,13 +1133,13 @@
                         <li>7-day delivery</li>
                         <li>2 revision rounds</li>
                     </ul>
-                    <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/creatororbit48/30min'});return false;" class="btn-primary">Book a Free Strategy Call →</a>
+                    <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/creatororbit48/30min'});return false;" class="btn-primary">Get Started →</a>
                 </div>
 
                 <div class="pricing-card">
                     <div class="pricing-header">
                         <h3>Premium</h3>
-                        <div class="price">₹15,000</div>
+                        <div class="price">₹1,00,000</div>
                         <p class="price-subtitle">Perfect for growing businesses and course creators</p>
                     </div>
                     <ul class="pricing-features">
@@ -1102,12 +1151,12 @@
                         <li>3 revision rounds</li>
                         <li>30-day post-launch support</li>
                     </ul>
-                    <a href="#cta" class="btn-outline">Get Started →</a>
+                    <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/creatororbit48/30min'});return false;" class="btn-outline">Get Started →</a>
                 </div>
             </div>
 
             <div class="packages-cta">
-                <a href="#cta" class="btn-primary">Book Your Strategy Call →</a>
+                <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/creatororbit48/30min'});return false;" class="btn-primary">Book Your Strategy Call →</a>
             </div>
         </div>
     </section>
@@ -1189,7 +1238,7 @@
         <div class="container">
             <h2>Ready to Build a Website That Actually <span class="highlight">Converts</span>?</h2>
             <p>Let's talk about your business, your goals, and how we can help you launch in 7 days.</p>
-            <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/creatororbit48/30min'});return false;" class="btn-primary">Book a Free Strategy Call →</a>
+            <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/creatororbit48/30min'});return false;" class="btn-primary">Book Your Free Strategy Call →</a>
             <p class="cta-note">No pressure. No sales pitch. Just a conversation about what's possible.</p>
         </div>
     </section>
@@ -1226,5 +1275,18 @@
             </div>
         </div>
     </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <!-- REPLACE 919876543210 with YOUR WhatsApp number (country code + number, no spaces) -->
+    <a href="https://wa.me/917590055635?text=Hi!%20I'm%20interested%20in%20your%20website%20services" 
+       class="whatsapp-float" 
+       target="_blank"
+       aria-label="Chat on WhatsApp">
+        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 0C7.164 0 0 7.164 0 16c0 2.824.739 5.488 2.032 7.792L0 32l8.416-2.016A15.908 15.908 0 0016 32c8.836 0 16-7.164 16-16S24.836 0 16 0zm0 29.344c-2.464 0-4.832-.672-6.848-1.92l-.48-.288-5.088 1.216 1.248-4.896-.32-.512A13.248 13.248 0 012.656 16c0-7.36 5.984-13.344 13.344-13.344S29.344 8.64 29.344 16 23.36 29.344 16 29.344z" fill="white"/>
+            <path d="M23.36 19.52c-.384-.192-2.272-1.12-2.624-1.248-.352-.128-.608-.192-.864.192-.256.384-1.024 1.248-1.248 1.504-.224.256-.448.288-.832.096-.384-.192-1.632-.608-3.104-1.92-1.152-1.024-1.92-2.288-2.144-2.672-.224-.384-.016-.592.176-.784.176-.176.384-.448.576-.672.192-.224.256-.384.384-.64.128-.256.064-.48-.032-.672-.096-.192-.864-2.08-1.184-2.848-.32-.736-.64-.64-.864-.64h-.736c-.256 0-.672.096-1.024.48-.352.384-1.344 1.312-1.344 3.2 0 1.888 1.376 3.712 1.568 3.968.192.256 2.688 4.128 6.528 5.792.912.384 1.632.608 2.192.784.928.288 1.76.24 2.432.144.736-.112 2.272-.928 2.592-1.824.32-.896.32-1.664.224-1.824-.096-.16-.352-.256-.736-.448z" fill="white"/>
+        </svg>
+    </a>
+
 </body>
 </html>
