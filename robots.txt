@@ -11,5 +11,5 @@ Allow: /
 User-agent: Bingbot
 Allow: /
 
-Sitemap: https://creatororbitn.pages.dev/sitemap.xml
-Host: https://creatororbitn.pages.dev
+Sitemap: https://creatororbit.pages.dev/sitemap.xml
+Host: https://creatororbit.pages.dev
